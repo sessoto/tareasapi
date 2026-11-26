@@ -1,4 +1,5 @@
 const express = require('express');
+const { resumen, mensaje } = require('./estadisticas');
 
 // Datos de ejemplo (en memoria, sin base de datos)
 const tareas = [
@@ -27,6 +28,11 @@ app.get('/tareas/:id', (req, res) => {
     return;
   }
   res.json(tarea);
+});
+
+app.get('/resumen', (req, res) => {
+  const datos = resumen(tareas);
+  res.json({ ...datos, mensaje: mensaje(datos) });
 });
 
 module.exports = app;
