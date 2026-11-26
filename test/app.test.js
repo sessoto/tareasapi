@@ -34,6 +34,13 @@ test('GET /tareas/99 devuelve 404', async () => {
   assert.strictEqual(respuesta.status, 404);
 });
 
+test('GET /resumen devuelve el avance', async () => {
+  const respuesta = await fetch(`${base}/resumen`);
+  const datos = await respuesta.json();
+  assert.strictEqual(datos.total, 3);
+  assert.strictEqual(datos.mensaje, 'Quedan 1 tareas pendientes (67 % de avance)');
+});
+
 test('la API permite consultas desde otra web (CORS)', async () => {
   const respuesta = await fetch(`${base}/tareas`);
   assert.strictEqual(respuesta.headers.get('access-control-allow-origin'), '*');
