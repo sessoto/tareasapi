@@ -1,0 +1,13 @@
+{
+  "name": "tareasapi",
+  "version": "1.0.0",
+  "description": "API REST de tareas (taller Practicas DevOps)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test --experimental-test-coverage --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=lcov.info"
+  },
+  "dependencies": {
+    "express": "4.21.2"
+  }
+}
