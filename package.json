@@ -8,6 +8,6 @@
     "test": "node --test --experimental-test-coverage --test-reporter=spec --test-reporter-destination=stdout --test-reporter=lcov --test-reporter-destination=lcov.info"
   },
   "dependencies": {
-    "express": "4.21.2"
+    "express": "4.22.3"
   }
 }
